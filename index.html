@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro Welding — 10+ Years Experience</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              steel: {
+                900: "#0f1418",
+                800: "#141a20",
+                700: "#1b242c",
+                600: "#25323c",
+                500: "#2f3f4a",
+                400: "#55626e",
+                300: "#7b8892",
+                200: "#a2adb6",
+                100: "#c9d1d8",
+              },
+              flame: {
+                500: "#ff6a00",
+                400: "#ff8533",
+                300: "#ffa366",
+              },
+            },
+            boxShadow: {
+              glow: "0 0 28px rgba(255,106,0,0.35)",
+            },
+            fontFamily: {
+              display: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+              body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Floating WhatsApp Icon -->
+    <a
+      href="https://wa.me/254700000000"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 group"
+    >
+      <span
+        class="absolute -top-2 -right-2 animate-ping inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"
+      ></span>
+      <span
+        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:scale-110 transition-transform duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+          viewBox="0 0 24 24"
+          width="36"
+          height="36"
+        >
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.59 1.38 5.11L2 22l4.99-1.36A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.07-6.25c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.66-.59-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.07-.11-.5-1.21-.68-1.66-.18-.44-.36-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.21.22-.8.78-.8 1.9s.82 2.21 1.01 2.37c.19.16 1.61 2.46 3.91 3.35.55.19.98.3 1.31.38.55.14 1.05.12 1.45.07.44-.05 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.09-.2-.14-.42-.25z"
+          />
+        </svg>
+      </span>
+    </a>
+
+    <!-- Animated Chatbot Widget -->
+    <div id="chatbot" class="fixed bottom-6 left-6 z-50">
+      <button
+        id="chatbotToggle"
+        class="w-16 h-16 rounded-full bg-flame-500 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 animate-bounce"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+          viewBox="0 0 24 24"
+          width="36"
+          height="36"
+        >
+          <path
+            d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10a9.96 9.96 0 0 0 5.11-1.38L22 22l-1.36-4.99A9.96 9.96 0 0 0 22 12c0-5.523-4.477-10-10-10zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm-1-7h2v2h-2v-2zm0-8h2v6h-2V5z"
+          />
+        </svg>
+      </button>
+      <div
+        id="chatbotWindow"
+        class="hidden mt-2 w-80 bg-steel-800 border border-flame-500 rounded-xl shadow-2xl overflow-hidden animate__animated animate__fadeInUp"
+      >
+        <div class="bg-flame-500 text-white px-4 py-3 font-bold">
+          Ask Engineer Owino Ngode
+        </div>
+        <div
+          id="chatbotMessages"
+          class="p-4 h-64 overflow-y-auto text-sm space-y-2 bg-steel-900"
+        ></div>
+        <form id="chatbotForm" class="flex border-t border-flame-500">
+          <input
+            type="text"
+            id="chatbotInput"
+            class="flex-1 px-3 py-2 bg-steel-900 text-white focus:outline-none"
+            placeholder="Type your question..."
+            autocomplete="off"
+          />
+          <button type="submit" class="px-4 bg-flame-500 text-white font-bold">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper (Testimonials carousel) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* Background spark effect */
+      .spark-bg {
+        background: radial-gradient(
+            1200px 600px at 80% 10%,
+            rgba(255, 106, 0, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 20% 80%,
+            rgba(255, 133, 51, 0.12),
+            transparent 60%
+          ),
+          linear-gradient(180deg, rgba(20, 26, 32, 0.9), rgba(20, 26, 32, 0.9));
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Lightbox */
+      .lightbox-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="bg-steel-900 text-white font-body tracking-tight">
+    <!-- Header / Navbar -->
+    <header
+      class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-steel-900/60 border-b border-white/5"
+    >
+      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#" class="flex items-center gap-2 group">
+            <div
+              class="h-9 w-9 rounded-xl bg-gradient-to-br from-flame-500 to-orange-600 grid place-items-center shadow-glow"
+            >
+              <i data-lucide="flame" class="h-5 w-5"></i>
+            </div>
+            <span class="font-display text-xl font-bold"
+              >Engineer <span class="text-flame-400">Owino Ngode</span></span
+            >
+          </a>
+          <div class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#about" class="hover:text-flame-300 transition">About</a>
+            <a href="#services" class="hover:text-flame-300 transition"
+              >Services</a
+            >
+            <a href="#projects" class="hover:text-flame-300 transition"
+              >Projects</a
+            >
+            <a href="#testimonials" class="hover:text-flame-300 transition"
+              >Testimonials</a
+            >
+            <a href="#contact" class="hover:text-flame-300 transition"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <a
+              href="#contact"
+              class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-flame-500 hover:bg-flame-400 text-sm font-medium shadow-glow transition"
+              >Get a Quote</a
+            >
+            <button
+              id="menuBtn"
+              class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-white/5"
+            >
+              <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+          <div class="py-3 space-y-1">
+            <a href="#about" class="block px-3 py-2 hover:bg-white/5 rounded-lg"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="block px-3 py-2 hover:bg-white/5 rounded-lg"
+              >Services</a
+            >
+            <a
+              href="#projects"
+              class="block px-3 py-2 hover:bg-white/5 rounded-lg"
+              >Projects</a
+            >
+            <a
+              href="#testimonials"
+              class="block px-3 py-2 hover:bg-white/5 rounded-lg"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="block px-3 py-2 hover:bg-white/5 rounded-lg"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-24 spark-bg overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1544829099-26de0c2226c6?q=80&w=1400&auto=format&fit=crop"
+        alt="Welder at work"
+        class="absolute inset-0 h-full w-full object-cover opacity-20 pointer-events-none select-none"
+      />
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 items-center gap-10">
+          <div data-aos="fade-right">
+            <span
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-flame-300/90"
+            >
+              <i data-lucide="badge-check" class="h-4 w-4"></i>
+              Over 10 Years of Precision Welding
+            </span>
+            <h1
+              class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-4 leading-[1.1]"
+            >
+              Reliable <span class="text-flame-400">Welding</span> & Metal
+              Fabrication by Engineer Owino Ngode
+            </h1>
+            <p class="mt-5 text-steel-100/90 max-w-xl">
+              From custom fabrication to industrial repairs, I deliver clean
+              welds, tight tolerances, and on‑time results across steel,
+              stainless, and aluminum.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                class="px-5 py-3 rounded-xl bg-flame-500 hover:bg-flame-400 shadow-glow font-medium transition"
+                >View Projects</a
+              >
+              <a
+                href="#contact"
+                class="px-5 py-3 rounded-xl border border-white/10 hover:border-white/30 bg-white/0 hover:bg-white/5 font-medium transition"
+                >Request a Quote</a
+              >
+            </div>
+            <div class="mt-8 flex items-center gap-6 text-sm text-white/70">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="h-5 w-5"></i> Certified
+                Welder
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="hammer" class="h-5 w-5"></i> Industrial &
+                Residential
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center" data-aos="fade-left">
+            <img
+              src="images/joseph.jpg"
+              alt="Engineer Owino Ngode"
+              class="w-40 h-40 rounded-full border-4 border-flame-500 shadow-lg mb-6"
+            />
+            <div
+              class="aspect-[4/3] rounded-2xl border border-white/10 bg-gradient-to-br from-steel-700 to-steel-800 p-2 shadow-2xl"
+            >
+              <div
+                class="h-full w-full rounded-xl bg-[radial-gradient(circle_at_30%_30%,rgba(255,106,0,0.25),transparent_35%),_radial-gradient(circle_at_70%_70%,rgba(255,133,51,0.18),transparent_35%)] grid place-items-center"
+              >
+                <div class="text-center p-6">
+                  <i
+                    data-lucide="sparkles"
+                    class="h-10 w-10 mx-auto opacity-80"
+                  ></i>
+                  <p class="mt-3 text-white/80">
+                    TIG • MIG • Stick • Flux‑Core
+                  </p>
+                  <p class="text-sm text-white/60">
+                    Steel · Stainless · Aluminum
+                  </p>
+                  <div
+                    class="mt-6 grid grid-cols-3 gap-3 text-xs text-white/70"
+                  >
+                    <div class="rounded-lg border border-white/10 p-3">
+                      Custom Fabrication
+                    </div>
+                    <div class="rounded-lg border border-white/10 p-3">
+                      On‑Site Repairs
+                    </div>
+                    <div class="rounded-lg border border-white/10 p-3">
+                      Prototyping
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-10 items-start">
+          <div
+            class="lg:col-span-1 flex flex-col items-center"
+            data-aos="fade-up"
+          >
+            <img
+              src="images/joseph.jpg"
+              alt="Engineer Owino Ngode"
+              class="w-32 h-32 rounded-full border-4 border-flame-500 shadow-lg mb-4"
+            />
+            <h2 class="font-display text-3xl font-bold">About</h2>
+            <p class="mt-3 text-white/70 text-center">
+              Precision welder with a decade of hands‑on experience across
+              fabrication shops, construction sites, and industrial facilities.
+            </p>
+          </div>
+          <div
+            class="lg:col-span-2 grid sm:grid-cols-2 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+              <div class="flex items-center gap-3">
+                <i data-lucide="id-card" class="h-5 w-5"></i>
+                <h3 class="font-semibold">Certifications</h3>
+              </div>
+              <ul
+                class="mt-3 text-sm list-disc list-inside text-white/80 space-y-1"
+              >
+                <li>ASME / AWS D1.1 (Placeholder)</li>
+                <li>OSHA Safety (Placeholder)</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+              <div class="flex items-center gap-3">
+                <i data-lucide="clock" class="h-5 w-5"></i>
+                <h3 class="font-semibold">Experience</h3>
+              </div>
+              <p class="mt-3 text-sm text-white/80">
+                10+ years delivering quality welds, reading blueprints, and
+                fabricating custom metal structures with tight tolerances.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+              <div class="flex items-center gap-3">
+                <i data-lucide="route" class="h-5 w-5"></i>
+                <h3 class="font-semibold">Capabilities</h3>
+              </div>
+              <p class="mt-3 text-sm text-white/80">
+                Shop & mobile welding, prototype fabrication, repair &
+                maintenance, finishing & QA.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+              <div class="flex items-center gap-3">
+                <i data-lucide="trophy" class="h-5 w-5"></i>
+                <h3 class="font-semibold">Highlights</h3>
+              </div>
+              <ul class="mt-3 text-sm text-white/80 space-y-1">
+                <li>Zero‑defect inspection streak (placeholder)</li>
+                <li>100+ completed projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-steel-800/40 border-t border-white/5">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="font-display text-3xl font-bold text-center mb-8">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-6">
+          <div
+            class="rounded-xl bg-steel-900 border border-flame-500 p-6 shadow-lg"
+            data-aos="fade-up"
+          >
+            <h3 class="font-semibold text-flame-400">
+              What types of welding do you offer?
+            </h3>
+            <p class="mt-2 text-white/80">
+              TIG, MIG, Stick, and Flux-Core welding for steel, stainless, and
+              aluminum.
+            </p>
+          </div>
+          <div
+            class="rounded-xl bg-steel-900 border border-flame-500 p-6 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <h3 class="font-semibold text-flame-400">
+              Do you provide mobile/on-site welding?
+            </h3>
+            <p class="mt-2 text-white/80">
+              Yes, fully equipped for field jobs and emergency repairs.
+            </p>
+          </div>
+          <div
+            class="rounded-xl bg-steel-900 border border-flame-500 p-6 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="font-semibold text-flame-400">Are you certified?</h3>
+            <p class="mt-2 text-white/80">
+              Certified to ASME/AWS standards and OSHA safety trained.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video & Image Gallery -->
+    <section id="gallery" class="py-20 bg-steel-800/40 border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl font-bold text-center mb-8">
+          Engineer Owino Ngode's Work Gallery
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- Video Gallery -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-flame-400">
+              Welding Videos
+            </h3>
+            <div class="swiper" id="videoSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <video
+                    controls
+                    poster="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  >
+                    <source
+                      src="https://assets.mixkit.co/videos/preview/mixkit-welder-working-in-a-factory-2856-large.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="swiper-slide">
+                  <video
+                    controls
+                    poster="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  >
+                    <source
+                      src="https://assets.mixkit.co/videos/preview/mixkit-welding-metal-in-a-workshop-2857-large.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- Image Gallery Carousel -->
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-flame-400">
+              Project Images
+            </h3>
+            <div class="swiper" id="imageSwiper">
+              <div class="swiper-wrapper">
+                <!-- Replace these with your actual project images -->
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/481048423_1822967638479898_3550325233224279612_n.jpg"
+                    alt="Project 1"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/481670973_1832621360847859_7216558951906331483_n.jpg"
+                    alt="Project 2"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/483066067_1832635170846478_8453977032987577015_n.jpg"
+                    alt="Project 3"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/486124588_1846145352828793_833158236320688693_n.jpg"
+                    alt="Project 4"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/486284888_1845834682859860_197904292425281864_n.jpg"
+                    alt="Project 5"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/486534859_1845325132910815_5937163277297906848_n.jpg"
+                    alt="Project 5"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/492241297_1868473683929293_1643552352663611582_n.jpg"
+                    alt="Project 5"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/projects/project1.jpeg"
+                    alt="Project 5"
+                    class="w-full h-64 object-cover rounded-xl shadow-lg"
+                  />
+                </div>
+                <!-- Add more slides as needed -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Carousel -->
+    <!-- <section id="certifications" class="py-20">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="font-display text-3xl font-bold text-center mb-8">
+          Certifications & Awards
+        </h2>
+        <div class="swiper" id="certSwiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide flex flex-col items-center justify-center p-8"
+            >
+              <i
+                data-lucide="badge-check"
+                class="h-12 w-12 text-flame-400 mb-4"
+              ></i>
+              <div class="font-bold text-lg">AWS D1.1 Certified Welder</div>
+              <div class="text-white/70">American Welding Society</div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center p-8"
+            >
+              <i
+                data-lucide="shield-check"
+                class="h-12 w-12 text-green-400 mb-4"
+              ></i>
+              <div class="font-bold text-lg">OSHA Safety Trained</div>
+              <div class="text-white/70">Occupational Safety & Health</div>
+            </div>
+            <div
+              class="swiper-slide flex flex-col items-center justify-center p-8"
+            >
+              <i
+                data-lucide="trophy"
+                class="h-12 w-12 text-yellow-400 mb-4"
+              ></i>
+              <div class="font-bold text-lg">Best Metalwork Project 2023</div>
+              <div class="text-white/70">Industry Award</div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Animated Welding Stats -->
+    <section id="stats" class="py-20 bg-steel-900 border-t border-white/5">
+      <div class="mx-auto max-w-4xl px-4 text-center">
+        <h2 class="font-display text-3xl font-bold mb-8">
+          Welding Achievements
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div
+            class="rounded-xl bg-steel-800 border border-flame-500 p-8 shadow-lg"
+            data-aos="zoom-in"
+          >
+            <div
+              class="text-5xl font-extrabold text-flame-400"
+              id="statProjects"
+            >
+              0+
+            </div>
+            <div class="mt-2 text-white/80">Projects Completed</div>
+          </div>
+          <div
+            class="rounded-xl bg-steel-800 border border-flame-500 p-8 shadow-lg"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
+            <div
+              class="text-5xl font-extrabold text-green-400"
+              id="statClients"
+            >
+              0+
+            </div>
+            <div class="mt-2 text-white/80">Happy Clients</div>
+          </div>
+          <div
+            class="rounded-xl bg-steel-800 border border-flame-500 p-8 shadow-lg"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="text-5xl font-extrabold text-yellow-400" id="statYears">
+              0+
+            </div>
+            <div class="mt-2 text-white/80">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section
+      id="services"
+      class="py-20 bg-steel-800/40 border-y border-white/5"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between" data-aos="fade-up">
+          <div>
+            <h2 class="font-display text-3xl font-bold">Services</h2>
+            <p class="text-white/70 mt-2">
+              Clean welds. Solid joints. Built to last.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-white/10 hover:border-white/30 bg-white/0 hover:bg-white/5 text-sm transition"
+            >Request a Quote</a
+          >
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card -->
+          <div
+            class="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition"
+            data-aos="zoom-in"
+          >
+            <i data-lucide="factory" class="h-6 w-6"></i>
+            <h3 class="mt-4 font-semibold">Industrial Welding</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Structural steel, pipe welds, and plant maintenance.
+            </p>
+          </div>
+          <div
+            class="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
+            <i data-lucide="wrench" class="h-6 w-6"></i>
+            <h3 class="mt-4 font-semibold">Repairs & Maintenance</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Gates, grills, trailers, machinery, and more.
+            </p>
+          </div>
+          <div
+            class="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <i data-lucide="package" class="h-6 w-6"></i>
+            <h3 class="mt-4 font-semibold">Custom Fabrication</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Benches, racks, frames, railings, and bespoke builds.
+            </p>
+          </div>
+          <div
+            class="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
+            <i data-lucide="truck" class="h-6 w-6"></i>
+            <h3 class="mt-4 font-semibold">Mobile / On‑Site</h3>
+            <p class="mt-2 text-sm text-white/70">
+              Fully equipped for field jobs and quick turnarounds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects / Portfolio -->
+    <section id="projects" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between" data-aos="fade-up">
+          <div>
+            <h2 class="font-display text-3xl font-bold">Projects</h2>
+            <p class="text-white/70 mt-2">
+              A snapshot of recent work. Click to enlarge.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Each image uses the same placeholder. Replace with actual URLs. -->
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/481048423_1822967638479898_3550325233224279612_n.jpg"
+            data-aos="fade-up"
+          >
+            <img
+              src="images/projects/481048423_1822967638479898_3550325233224279612_n.jpg"
+              alt="Project 1"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Stainless Railing</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/481670973_1832621360847859_7216558951906331483_n.jpg"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <img
+              src="images/projects/481670973_1832621360847859_7216558951906331483_n.jpg"
+              alt="Project 2"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Gate Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/483066067_1832635170846478_8453977032987577015_n.jpg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="images/projects/483066067_1832635170846478_8453977032987577015_n.jpg"
+              alt="Project 3"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Industrial Repair</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/486124588_1846145352828793_833158236320688693_n.jpg"
+            data-aos="fade-up"
+          >
+            <img
+              src="images/projects/486124588_1846145352828793_833158236320688693_n.jpg"
+              alt="Project 4"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Gate Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/project1.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <img
+              src="images/projects/project1.jpeg"
+              alt="Project 5"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Aluminum Bench</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="images/projects/project2.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Shop Fixture</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div
+        id="lightbox"
+        class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 p-4"
+      >
+        <button
+          id="lightboxClose"
+          class="absolute top-4 right-4 rounded-xl bg-white/10 p-2 hover:bg-white/20"
+        >
+          <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <img
+          id="lightboxImg"
+          src=""
+          alt="Project image"
+          class="max-h-[85vh] w-auto rounded-xl border border-white/10 shadow-2xl"
+        />
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section
+      id="testimonials"
+      class="py-20 bg-steel-800/40 border-y border-white/5"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between" data-aos="fade-up">
+          <div>
+            <h2 class="font-display text-3xl font-bold">Happy Clients</h2>
+            <p class="text-white/70 mt-2">What customers say about the work.</p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide -->
+              <div class="swiper-slide">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div class="flex items-center gap-3 text-flame-300">
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                  </div>
+                  <p class="mt-4 text-white/80">
+                    “Welds were clean and the new gate is rock‑solid. Fast
+                    turnaround!”
+                  </p>
+                  <p class="mt-3 text-sm text-white/60">— Jane M., Homeowner</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div class="flex items-center gap-3 text-flame-300">
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star-half" class="h-5 w-5"></i>
+                  </div>
+                  <p class="mt-4 text-white/80">
+                    “Professional, on time, and excellent communication on our
+                    plant repairs.”
+                  </p>
+                  <p class="mt-3 text-sm text-white/60">
+                    — Peter K., Factory Manager
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div class="flex items-center gap-3 text-flame-300">
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                    <i data-lucide="star" class="h-5 w-5"></i>
+                  </div>
+                  <p class="mt-4 text-white/80">
+                    “Custom racks fit perfectly and look great. Highly
+                    recommend.”
+                  </p>
+                  <p class="mt-3 text-sm text-white/60">
+                    — Brian O., Contractor
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination / Nav -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div data-aos="fade-right">
+            <h2 class="font-display text-3xl font-bold">Get a Quote</h2>
+            <p class="text-white/70 mt-2">
+              Tell me about your job and I’ll get back within 1 business day.
+            </p>
+
+            <div class="mt-6 space-y-4 text-sm">
+              <p class="flex items-center gap-2">
+                <i data-lucide="phone" class="h-5 w-5"></i>
+                <a href="tel:+254700000000" class="hover:text-flame-300"
+                  >+254 700 000 000</a
+                >
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="message-circle" class="h-5 w-5"></i>
+                <a
+                  href="https://wa.me/254700000000"
+                  target="_blank"
+                  class="hover:text-flame-300"
+                  >WhatsApp</a
+                >
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="mail" class="h-5 w-5"></i>
+                <a href="mailto:hello@proweld.com" class="hover:text-flame-300"
+                  >hello@proweld.com</a
+                >
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="h-5 w-5"></i>
+                <span>Workshop: Nairobi, Kenya</span>
+              </p>
+            </div>
+
+            <div
+              class="mt-8 rounded-2xl overflow-hidden border border-white/10"
+            >
+              <!-- Replace src with your map embed -->
+              <iframe
+                title="Map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=36.806%2C-1.292%2C36.836%2C-1.272&layer=mapnik"
+                class="w-full h-64"
+              ></iframe>
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <form
+              id="quoteForm"
+              class="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4"
+            >
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm">Full Name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="mt-2 w-full rounded-xl bg-steel-800/60 border border-white/10 focus:border-flame-400 focus:ring-0 p-3"
+                  />
+                </label>
+                <label class="block">
+                  <span class="text-sm">Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="mt-2 w-full rounded-xl bg-steel-800/60 border border-white/10 focus:border-flame-400 focus:ring-0 p-3"
+                  />
+                </label>
+              </div>
+              <label class="block">
+                <span class="text-sm">Phone</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  class="mt-2 w-full rounded-xl bg-steel-800/60 border border-white/10 focus:border-flame-400 focus:ring-0 p-3"
+                />
+              </label>
+              <label class="block">
+                <span class="text-sm">Service Needed</span>
+                <select
+                  name="service"
+                  class="mt-2 w-full rounded-xl bg-steel-800/60 border border-white/10 focus:border-flame-400 focus:ring-0 p-3"
+                >
+                  <option>Industrial Welding</option>
+                  <option>Repairs & Maintenance</option>
+                  <option>Custom Fabrication</option>
+                  <option>Mobile / On‑Site</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="text-sm">Project Details</span>
+                <textarea
+                  name="details"
+                  rows="4"
+                  class="mt-2 w-full rounded-xl bg-steel-800/60 border border-white/10 focus:border-flame-400 focus:ring-0 p-3"
+                  placeholder="Dimensions, material, timeline..."
+                ></textarea>
+              </label>
+              <button
+                type="submit"
+                class="w-full rounded-xl bg-flame-500 hover:bg-flame-400 p-3 font-medium shadow-glow transition"
+              >
+                Send Request
+              </button>
+              <p id="formMsg" class="hidden text-sm"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/5">
+      <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-white/60 text-sm">
+          © <span id="year"></span> Engineer Owino Ngode. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4 text-white/70">
+          <a href="#" class="hover:text-flame-300" aria-label="Facebook"
+            ><i data-lucide="facebook" class="h-5 w-5"></i
+          ></a>
+          <a href="#" class="hover:text-flame-300" aria-label="Instagram"
+            ><i data-lucide="instagram" class="h-5 w-5"></i
+          ></a>
+          <a href="#" class="hover:text-flame-300" aria-label="LinkedIn"
+            ><i data-lucide="linkedin" class="h-5 w-5"></i
+          ></a>
+          <a href="#" class="hover:text-flame-300" aria-label="YouTube"
+            ><i data-lucide="youtube" class="h-5 w-5"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      // Init icons
+      lucide.createIcons();
+
+      // Init AOS
+      AOS.init({ duration: 700, once: true, offset: 80, easing: "ease-out" });
+
+      // Mobile menu
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Swiper (Testimonials)
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: { delay: 4500 },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+
+      // Video carousel
+      new Swiper("#videoSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: "#videoSwiper .swiper-pagination", clickable: true },
+        effect: "fade",
+      });
+
+      // Image gallery carousel
+      new Swiper("#imageSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 3500 },
+        pagination: { el: "#imageSwiper .swiper-pagination", clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 2 },
+        },
+      });
+
+      // Lightbox
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightboxImg");
+      const lbClose = document.getElementById("lightboxClose");
+      document.querySelectorAll("[data-lightbox]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const src = btn.getAttribute("data-lightbox");
+          lbImg.src = src;
+          lb.classList.remove("hidden");
+          document.body.classList.add("lightbox-open");
+        });
+      });
+      lbClose.addEventListener("click", () => {
+        lb.classList.add("hidden");
+        lbImg.src = "";
+        document.body.classList.remove("lightbox-open");
+      });
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) {
+          lb.classList.add("hidden");
+          lbImg.src = "";
+          document.body.classList.remove("lightbox-open");
+        }
+      });
+
+      // Quote form (demo only)
+      const form = document.getElementById("quoteForm");
+      const formMsg = document.getElementById("formMsg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        formMsg.className = "text-sm mt-2 text-flame-300";
+        formMsg.textContent = `Thanks, ${data.name}! Your request was received. I will reach out shortly.`;
+        formMsg.classList.remove("hidden");
+        form.reset();
+      });
+
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Chatbot & Stats Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <script>
+      // Floating WhatsApp icon already animated via Tailwind
+
+      // Chatbot widget logic
+      const chatbotToggle = document.getElementById("chatbotToggle");
+      const chatbotWindow = document.getElementById("chatbotWindow");
+      const chatbotForm = document.getElementById("chatbotForm");
+      const chatbotInput = document.getElementById("chatbotInput");
+      const chatbotMessages = document.getElementById("chatbotMessages");
+      let chatbotOpen = false;
+      chatbotToggle.addEventListener("click", () => {
+        chatbotOpen = !chatbotOpen;
+        chatbotWindow.classList.toggle("hidden", !chatbotOpen);
+      });
+      chatbotForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const userMsg = chatbotInput.value.trim();
+        if (!userMsg) return;
+        appendChatMsg("You", userMsg, "right");
+        chatbotInput.value = "";
+        setTimeout(() => {
+          appendChatMsg("Engineer Owino Ngode", getBotReply(userMsg), "left");
+        }, 700 + Math.random() * 500);
+      });
+      function appendChatMsg(sender, msg, side) {
+        const div = document.createElement("div");
+        div.className = `flex ${
+          side === "right" ? "justify-end" : "justify-start"
+        } animate__animated animate__fadeInUp`;
+        div.innerHTML = `<div class="max-w-[70%] px-4 py-2 rounded-xl ${
+          side === "right"
+            ? "bg-flame-500 text-white"
+            : "bg-steel-800 text-white"
+        } shadow-lg">${sender}: ${msg}</div>`;
+        chatbotMessages.appendChild(div);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+      function getBotReply(msg) {
+        msg = msg.toLowerCase();
+        if (msg.includes("price") || msg.includes("cost"))
+          return "Pricing depends on project details. Please share your requirements for a quote.";
+        if (msg.includes("certif"))
+          return "I am AWS D1.1 certified and OSHA safety trained.";
+        if (msg.includes("mobile") || msg.includes("on-site"))
+          return "Yes, I offer mobile/on-site welding services.";
+        if (msg.includes("contact"))
+          return "You can reach me via WhatsApp, phone, or the contact form.";
+        if (msg.includes("timeline") || msg.includes("how long"))
+          return "Project timelines vary. Most jobs are completed within a week.";
+        return "I am here to help! Ask me anything about welding, services, or your project.";
+      }
+
+      // Certifications carousel
+      new Swiper("#certSwiper", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: { delay: 3500 },
+        pagination: { el: "#certSwiper .swiper-pagination", clickable: true },
+      });
+
+      // Animated stats
+      function animateStat(id, end, duration) {
+        let start = 0;
+        const step = Math.ceil(end / (duration / 30));
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.dataset.animated === "true") return;
+        el.dataset.animated = "true";
+        const interval = setInterval(() => {
+          start += step;
+          if (start >= end) {
+            el.textContent = end + "+";
+            clearInterval(interval);
+          } else {
+            el.textContent = start + "+";
+          }
+        }, 30);
+      }
+
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      function triggerStatsAnimation() {
+        const projects = document.getElementById("statProjects");
+        const clients = document.getElementById("statClients");
+        const years = document.getElementById("statYears");
+        if (projects && isInViewport(projects))
+          animateStat("statProjects", 120, 1200);
+        if (clients && isInViewport(clients))
+          animateStat("statClients", 85, 1200);
+        if (years && isInViewport(years)) animateStat("statYears", 11, 1200);
+      }
+
+      window.addEventListener("scroll", triggerStatsAnimation);
+      window.addEventListener("DOMContentLoaded", triggerStatsAnimation);
+    </script>
+  </body>
+</html>
