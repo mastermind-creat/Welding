@@ -1,0 +1,93 @@
+/* Background spark effect */
+      .spark-bg {
+        background: radial-gradient(
+            1200px 600px at 80% 10%,
+            rgba(255, 106, 0, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 20% 80%,
+            rgba(255, 133, 51, 0.12),
+            transparent 60%
+          ),
+          linear-gradient(180deg, rgba(20, 26, 32, 0.9), rgba(20, 26, 32, 0.9));
+      }
+
+      .light-mode .spark-bg {
+        background: radial-gradient(
+            1200px 600px at 80% 10%,
+            rgba(255, 106, 0, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 20% 80%,
+            rgba(255, 133, 51, 0.08),
+            transparent 60%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(249, 250, 251, 0.9),
+            rgba(249, 250, 251, 0.9)
+          );
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Lightbox */
+      .lightbox-open {
+        overflow: hidden;
+      }
+
+      /* Typing effect styles */
+      .typing {
+        overflow: hidden;
+        border-right: 2px solid #ea580c;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #ea580c }
+      }
+      
+      /* Light theme adjustments */
+      .light-mode {
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      
+      .light-mode .bg-steel-900 {
+        background-color: #f8fafc;
+      }
+      
+      .light-mode .bg-steel-800 {
+        background-color: #f1f5f9;
+      }
+      
+      .light-mode .text-white {
+        color: #1e293b;
+      }
+      
+      .light-mode .text-white\/70 {
+        color: rgba(30, 41, 59, 0.7);
+      }
+      
+      .light-mode .text-white\/80 {
+        color: rgba(30, 41, 59, 0.8);
+      }
+      
+      .light-mode .border-white\/10 {
+        border-color: rgba(30, 41, 59, 0.1);
+      }
+      
+      .light-mode .bg-white\/5 {
+        background-color: rgba(30, 41, 59, 0.05);
+      }

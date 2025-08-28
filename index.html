@@ -62,91 +62,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-      /* Background spark effect */
-      .spark-bg {
-        background: radial-gradient(
-            1200px 600px at 80% 10%,
-            rgba(255, 106, 0, 0.18),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 500px at 20% 80%,
-            rgba(255, 133, 51, 0.12),
-            transparent 60%
-          ),
-          linear-gradient(180deg, rgba(20, 26, 32, 0.9), rgba(20, 26, 32, 0.9));
-      }
-
-      .light-mode .spark-bg {
-        background: radial-gradient(
-            1200px 600px at 80% 10%,
-            rgba(255, 106, 0, 0.12),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 500px at 20% 80%,
-            rgba(255, 133, 51, 0.08),
-            transparent 60%
-          ),
-          linear-gradient(
-            180deg,
-            rgba(249, 250, 251, 0.9),
-            rgba(249, 250, 251, 0.9)
-          );
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-      /* Lightbox */
-      .lightbox-open {
-        overflow: hidden;
-      }
-
-      /* Light mode adjustments */
-      .light-mode {
-        background-color: #f9fafb;
-        color: #1f2937;
-      }
-
-      .light-mode .bg-steel-900 {
-        background-color: #f9fafb;
-      }
-
-      .light-mode .bg-steel-800 {
-        background-color: #e5e7eb;
-      }
-
-      .light-mode .text-white {
-        color: #1f2937;
-      }
-
-      .light-mode .text-white\/70 {
-        color: rgba(31, 41, 55, 0.85);
-      }
-
-      .light-mode .text-white\/60 {
-        color: rgba(31, 41, 55, 0.75);
-      }
-
-      .light-mode .border-white\/10 {
-        border-color: rgba(0, 0, 0, 0.1);
-      }
-
-      .light-mode .bg-white\/5 {
-        background-color: rgba(0, 0, 0, 0.03);
-      }
-
-      .light-mode .hover\:bg-white\/5:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-
-      .light-mode
-        .backdrop-blur.supports-\[backdrop-filter\]\:bg-steel-900\/60 {
-        background-color: rgba(249, 250, 251, 0.6);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body
@@ -220,8 +136,11 @@
             <div
               class="max-w-[70%] px-4 py-2 rounded-xl bg-steel-800 text-white shadow-lg"
             >
-              Engineer Owino: Hi there I'm here to answer your questions about
-              welding services, projects, or anything else you'd like to know.
+              <span id="chatbotGreeting" class="typing"
+                >Engineer Owino: Hi there. <br />I'm here to answer your
+                questions about <br />welding services, projects, or
+                <br />anything else you'd like to know.</span
+              >
             </div>
           </div>
         </div>
@@ -237,6 +156,15 @@
             Send
           </button>
         </form>
+        <div class="text-center py-2 text-xs text-gray-500 bg-steel-800">
+          Powered By
+          <a
+            href="https://lates-portfolio-v1.vercel.app/"
+            target="_blank"
+            class="text-flame-400 hover:underline"
+            >Mastermind</a
+          >
+        </div>
       </div>
     </div>
 
@@ -888,7 +816,7 @@
             data-lightbox="images/projects/project1.jpeg"
             data-aos="fade-up"
             data-aos-delay="50"
-            data-category="residential"
+            data-category="gates"
           >
             <img
               src="images/projects/project1.jpeg"
@@ -907,7 +835,7 @@
             data-lightbox="images/projects/project2.jpeg"
             data-aos="fade-up"
             data-aos-delay="100"
-            data-category="custom"
+            data-category="gates"
           >
             <img
               src="images/projects/project2.jpeg"
@@ -917,7 +845,318 @@
             <span
               class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
             ></span>
-            <span class="absolute bottom-3 left-3 text-sm">Shop Fixture</span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="gates"
+          >
+            <img
+              src="images/projects/project3.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Custom Repair</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project4.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/project4.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="gates"
+          >
+            <img
+              src="images/projects/project5.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Gate Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/project6.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Window</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="custom"
+          >
+            <img
+              src="images/projects/project7.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Stainless Railing</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/project8.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="custom"
+          >
+            <img
+              src="images/projects/project9.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Gate Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="custom"
+          >
+            <img
+              src="images/projects/project10.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="industrial"
+          >
+            <img
+              src="images/projects/project11.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Window </span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/12.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Door Fitting</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/13.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Windows</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="residential"
+          >
+            <img
+              src="images/projects/14.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Windows</span>
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="custom"
+          >
+            <img
+              src="images/projects/15.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="custom"
+          >
+            <img
+              src="images/projects/16.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="gates"
+          >
+            <img
+              src="images/projects/17.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Gate Fabrication</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="gates"
+          >
+            <img
+              src="images/projects/18.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Stainless Railing</span
+            >
+          </button>
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
+            data-lightbox="images/projects/project2.jpeg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="industrial"
+          >
+            <img
+              src="images/projects/19.jpeg"
+              alt="Project 6"
+              class="h-56 w-full object-cover transition group-hover:scale-105"
+            />
+            <span
+              class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+            ></span>
+            <span class="absolute bottom-3 left-3 text-sm">Windows</span>
           </button>
         </div>
 
@@ -1283,6 +1522,15 @@
           <p>
             © <span id="year"></span> Engineer Owino Ngode. All rights reserved.
           </p>
+          <p class="mt-2">
+            Powered by
+            <a
+              href="https://lates-portfolio-v1.vercel.app/"
+              target="_blank"
+              class="text-flame-400 hover:underline"
+              >Mastermind</a
+            >
+          </p>
         </div>
       </div>
     </footer>
@@ -1290,336 +1538,9 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-      // Init icons
-      lucide.createIcons();
-
-      // Theme toggle functionality
-      const themeToggle = document.getElementById("themeToggle");
-      const lightIcon = document.getElementById("lightIcon");
-      const darkIcon = document.getElementById("darkIcon");
-      const body = document.body;
-
-      // Check for saved theme preference or respect OS preference
-      const savedTheme =
-        localStorage.getItem("theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light");
-
-      if (savedTheme === "light") {
-        body.classList.add("light-mode");
-        lightIcon.classList.remove("hidden");
-        darkIcon.classList.add("hidden");
-      }
-
-      themeToggle.addEventListener("click", () => {
-        body.classList.toggle("light-mode");
-        if (body.classList.contains("light-mode")) {
-          localStorage.setItem("theme", "light");
-          lightIcon.classList.remove("hidden");
-          darkIcon.classList.add("hidden");
-        } else {
-          localStorage.setItem("theme", "dark");
-          lightIcon.classList.add("hidden");
-          darkIcon.classList.remove("hidden");
-        }
-      });
-
-      // Init AOS
-      AOS.init({ duration: 700, once: true, offset: 80, easing: "ease-out" });
-
-      // Mobile menu
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Swiper (Testimonials)
-      const swiper = new Swiper(".swiper", {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        loop: true,
-        autoplay: { delay: 4500 },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        breakpoints: {
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        },
-      });
-
-      // Video carousel
-      new Swiper("#videoSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: { delay: 5000 },
-        pagination: { el: "#videoSwiper .swiper-pagination", clickable: true },
-        effect: "fade",
-      });
-
-      // Image gallery carousel
-      new Swiper("#imageSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: { delay: 3500 },
-        pagination: { el: "#imageSwiper .swiper-pagination", clickable: true },
-        breakpoints: {
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 2 },
-        },
-      });
-
-      // Lightbox
-      const lb = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightboxImg");
-      const lbClose = document.getElementById("lightboxClose");
-      document.querySelectorAll("[data-lightbox]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const src = btn.getAttribute("data-lightbox");
-          lbImg.src = src;
-          lb.classList.remove("hidden");
-          document.body.classList.add("lightbox-open");
-        });
-      });
-      lbClose.addEventListener("click", () => {
-        lb.classList.add("hidden");
-        lbImg.src = "";
-        document.body.classList.remove("lightbox-open");
-      });
-      lb.addEventListener("click", (e) => {
-        if (e.target === lb) {
-          lb.classList.add("hidden");
-          lbImg.src = "";
-          document.body.classList.remove("lightbox-open");
-        }
-      });
-
-      // Quote form (demo only)
-      const form = document.getElementById("quoteForm");
-      const formMsg = document.getElementById("formMsg");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(form).entries());
-        formMsg.className = "text-sm mt-2 text-flame-300";
-        formMsg.textContent = `Thanks, ${data.name}! Your request was received. I will reach out shortly.`;
-        formMsg.classList.remove("hidden");
-        form.reset();
-      });
-
-      // Year
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Project category filtering
-      const categoryFilters = document.querySelectorAll(".category-filter");
-      const projectItems = document.querySelectorAll(".project-item");
-
-      categoryFilters.forEach((filter) => {
-        filter.addEventListener("click", () => {
-          // Remove active class from all filters
-          categoryFilters.forEach((f) =>
-            f.classList.remove("active", "bg-flame-500", "text-white")
-          );
-          categoryFilters.forEach((f) =>
-            f.classList.add("border", "border-white/10", "hover:bg-white/5")
-          );
-
-          // Add active class to clicked filter
-          filter.classList.add("active", "bg-flame-500", "text-white");
-          filter.classList.remove(
-            "border",
-            "border-white/10",
-            "hover:bg-white/5"
-          );
-
-          const category = filter.getAttribute("data-category");
-
-          // Show/hide projects based on category
-          projectItems.forEach((item) => {
-            if (
-              category === "all" ||
-              item.getAttribute("data-category") === category
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // View More functionality
-      const viewMoreBtn = document.getElementById("viewMoreBtn");
-      let visibleProjects = 6; // Initial number of visible projects
-
-      // Initially hide projects beyond the first 6
-      projectItems.forEach((item, index) => {
-        if (index >= visibleProjects) {
-          item.style.display = "none";
-        }
-      });
-
-      viewMoreBtn.addEventListener("click", () => {
-        visibleProjects += 3;
-
-        // Show next set of projects
-        projectItems.forEach((item, index) => {
-          if (index < visibleProjects) {
-            item.style.display = "block";
-            // Re-trigger animation for newly shown items
-            item.setAttribute("data-aos", "fade-up");
-            AOS.refresh();
-          }
-        });
-
-        // Hide button if all projects are visible
-        if (visibleProjects >= projectItems.length) {
-          viewMoreBtn.style.display = "none";
-        }
-      });
-    </script>
+    <script src="script.js"></script>
     <!-- Chatbot & Stats Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
-    <script>
-      // Floating WhatsApp icon already animated via Tailwind
-
-      // Chatbot widget logic
-      const chatbotToggle = document.getElementById("chatbotToggle");
-      const chatbotWindow = document.getElementById("chatbotWindow");
-      const chatbotForm = document.getElementById("chatbotForm");
-      const chatbotInput = document.getElementById("chatbotInput");
-      const chatbotMessages = document.getElementById("chatbotMessages");
-      let chatbotOpen = false;
-      chatbotToggle.addEventListener("click", () => {
-        chatbotOpen = !chatbotOpen;
-        chatbotWindow.classList.toggle("hidden", !chatbotOpen);
-      });
-      chatbotForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const userMsg = chatbotInput.value.trim();
-        if (!userMsg) return;
-        appendChatMsg("You", userMsg, "right");
-        chatbotInput.value = "";
-        setTimeout(() => {
-          appendChatMsg("Engineer Owino Ngode", getBotReply(userMsg), "left");
-        }, 700 + Math.random() * 500);
-      });
-      function appendChatMsg(sender, msg, side) {
-        const div = document.createElement("div");
-        div.className = `flex ${
-          side === "right" ? "justify-end" : "justify-start"
-        } animate__animated animate__fadeInUp`;
-        div.innerHTML = `<div class="max-w-[70%] px-4 py-2 rounded-xl ${
-          side === "right"
-            ? "bg-flame-500 text-white"
-            : "bg-steel-800 text-white"
-        } shadow-lg">${sender}: ${msg}</div>`;
-        chatbotMessages.appendChild(div);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-      }
-      function getBotReply(msg) {
-        msg = msg.toLowerCase();
-        if (
-          msg.includes("price") ||
-          msg.includes("cost") ||
-          msg.includes("how much")
-        )
-          return "Pricing depends on project details like materials, complexity, and timeline. For a custom quote, please share your project requirements.";
-        if (msg.includes("certif") || msg.includes("qualified"))
-          return "I am AWS D1.1 certified and OSHA safety trained with over 10 years of experience in industrial and residential welding.";
-        if (
-          msg.includes("mobile") ||
-          msg.includes("on-site") ||
-          msg.includes("travel")
-        )
-          return "Yes, I offer mobile/on-site welding services with all necessary equipment. I serve Nairobi and surrounding areas.";
-        if (
-          msg.includes("contact") ||
-          msg.includes("reach") ||
-          msg.includes("number")
-        )
-          return "You can reach me via WhatsApp at +254705455409, phone call, email at hello@proweld.com, or through the contact form on this website.";
-        if (
-          msg.includes("timeline") ||
-          msg.includes("how long") ||
-          msg.includes("time")
-        )
-          return "Project timelines vary based on complexity. Small repairs: 1-2 days, Custom fabrication: 3-7 days, Large projects: 1-2 weeks. I'll provide a specific timeline after discussing your project.";
-        if (
-          msg.includes("material") ||
-          msg.includes("steel") ||
-          msg.includes("aluminum") ||
-          msg.includes("stainless")
-        )
-          return "I work with various materials including mild steel, stainless steel, aluminum, and other alloys. The best material depends on your project's requirements and budget.";
-        if (
-          msg.includes("service") ||
-          msg.includes("what do you do") ||
-          msg.includes("offer")
-        )
-          return "I offer industrial welding, repairs & maintenance, custom fabrication, and mobile on-site services. This includes gates, railings, structural work, machinery repair, and custom metal pieces.";
-        if (
-          msg.includes("experience") ||
-          msg.includes("how long") ||
-          msg.includes("year")
-        )
-          return "I have over 10 years of professional welding experience across various industries including construction, manufacturing, and residential projects.";
-        if (
-          msg.includes("emergency") ||
-          msg.includes("urgent") ||
-          msg.includes("asap")
-        )
-          return "I offer emergency repair services for critical situations. Please call or WhatsApp me directly at +254705455409 for urgent requests.";
-        if (
-          msg.includes("payment") ||
-          msg.includes("pay") ||
-          msg.includes("deposit")
-        )
-          return "For most projects, I require a 30% deposit with the balance upon completion. I accept mobile money, bank transfer, or cash.";
-        return "I'm here to help with your welding and metal fabrication needs! You can ask me about services, pricing, materials, timelines, or anything else about my work.";
-      }
-
-      // Animated stats
-      function animateStat(id, end, duration) {
-        let start = 0;
-        const step = Math.ceil(end / (duration / 30));
-        const el = document.getElementById(id);
-        if (!el) return;
-        if (el.dataset.animated === "true") return;
-        el.dataset.animated = "true";
-        const interval = setInterval(() => {
-          start += step;
-          if (start >= end) {
-            el.textContent = end + "+";
-            clearInterval(interval);
-          } else {
-            el.textContent = start + "+";
-          }
-        }, 30);
-      }
-
-      function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
-      }
-
-      function triggerStatsAnimation() {
-        const projects = document.getElementById("statProjects");
-        const clients = document.getElementById("statClients");
-        const years = document.getElementById("statYears");
-        if (projects && isInViewport(projects))
-          animateStat("statProjects", 120, 1200);
-        if (clients && isInViewport(clients))
-          animateStat("statClients", 85, 1200);
-        if (years && isInViewport(years)) animateStat("statYears", 11, 1200);
-      }
-
-      window.addEventListener("scroll", triggerStatsAnimation);
-      window.addEventListener("DOMContentLoaded", triggerStatsAnimation);
-    </script>
+    <script src="chatbot.js"></script>
   </body>
 </html>
