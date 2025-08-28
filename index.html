@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro Welding — 10+ Years Experience</title>
+    <title>Engineer Owino Ngode — 10+ Years Experience</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
@@ -40,75 +41,7 @@
         },
       };
     </script>
-    <!-- Floating WhatsApp Icon -->
-    <a
-      href="https://wa.me/254700000000"
-      target="_blank"
-      class="fixed bottom-6 right-6 z-50 group"
-    >
-      <span
-        class="absolute -top-2 -right-2 animate-ping inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"
-      ></span>
-      <span
-        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:scale-110 transition-transform duration-300"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="white"
-          viewBox="0 0 24 24"
-          width="36"
-          height="36"
-        >
-          <path
-            d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.59 1.38 5.11L2 22l4.99-1.36A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.07-6.25c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.66-.59-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.07-.11-.5-1.21-.68-1.66-.18-.44-.36-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.21.22-.8.78-.8 1.9s.82 2.21 1.01 2.37c.19.16 1.61 2.46 3.91 3.35.55.19.98.3 1.31.38.55.14 1.05.12 1.45.07.44-.05 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.09-.2-.14-.42-.25z"
-          />
-        </svg>
-      </span>
-    </a>
 
-    <!-- Animated Chatbot Widget -->
-    <div id="chatbot" class="fixed bottom-6 left-6 z-50">
-      <button
-        id="chatbotToggle"
-        class="w-16 h-16 rounded-full bg-flame-500 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 animate-bounce"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="white"
-          viewBox="0 0 24 24"
-          width="36"
-          height="36"
-        >
-          <path
-            d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10a9.96 9.96 0 0 0 5.11-1.38L22 22l-1.36-4.99A9.96 9.96 0 0 0 22 12c0-5.523-4.477-10-10-10zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm-1-7h2v2h-2v-2zm0-8h2v6h-2V5z"
-          />
-        </svg>
-      </button>
-      <div
-        id="chatbotWindow"
-        class="hidden mt-2 w-80 bg-steel-800 border border-flame-500 rounded-xl shadow-2xl overflow-hidden animate__animated animate__fadeInUp"
-      >
-        <div class="bg-flame-500 text-white px-4 py-3 font-bold">
-          Ask Engineer Owino Ngode
-        </div>
-        <div
-          id="chatbotMessages"
-          class="p-4 h-64 overflow-y-auto text-sm space-y-2 bg-steel-900"
-        ></div>
-        <form id="chatbotForm" class="flex border-t border-flame-500">
-          <input
-            type="text"
-            id="chatbotInput"
-            class="flex-1 px-3 py-2 bg-steel-900 text-white focus:outline-none"
-            placeholder="Type your question..."
-            autocomplete="off"
-          />
-          <button type="submit" class="px-4 bg-flame-500 text-white font-bold">
-            Send
-          </button>
-        </form>
-      </div>
-    </div>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -144,6 +77,25 @@
           ),
           linear-gradient(180deg, rgba(20, 26, 32, 0.9), rgba(20, 26, 32, 0.9));
       }
+
+      .light-mode .spark-bg {
+        background: radial-gradient(
+            1200px 600px at 80% 10%,
+            rgba(255, 106, 0, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 20% 80%,
+            rgba(255, 133, 51, 0.08),
+            transparent 60%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(249, 250, 251, 0.9),
+            rgba(249, 250, 251, 0.9)
+          );
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -151,10 +103,143 @@
       .lightbox-open {
         overflow: hidden;
       }
+
+      /* Light mode adjustments */
+      .light-mode {
+        background-color: #f9fafb;
+        color: #1f2937;
+      }
+
+      .light-mode .bg-steel-900 {
+        background-color: #f9fafb;
+      }
+
+      .light-mode .bg-steel-800 {
+        background-color: #e5e7eb;
+      }
+
+      .light-mode .text-white {
+        color: #1f2937;
+      }
+
+      .light-mode .text-white\/70 {
+        color: rgba(31, 41, 55, 0.85);
+      }
+
+      .light-mode .text-white\/60 {
+        color: rgba(31, 41, 55, 0.75);
+      }
+
+      .light-mode .border-white\/10 {
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .light-mode .bg-white\/5 {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      .light-mode .hover\:bg-white\/5:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      .light-mode
+        .backdrop-blur.supports-\[backdrop-filter\]\:bg-steel-900\/60 {
+        background-color: rgba(249, 250, 251, 0.6);
+      }
     </style>
   </head>
 
-  <body class="bg-steel-900 text-white font-body tracking-tight">
+  <body
+    class="bg-steel-900 text-white font-body tracking-tight dark:light-mode"
+  >
+    <!-- Theme Toggle Button -->
+    <button
+      id="themeToggle"
+      class="fixed top-24 right-6 z-50 w-12 h-12 rounded-full bg-steel-700 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+    >
+      <i data-lucide="sun" class="h-6 w-6 hidden dark:block" id="lightIcon"></i>
+      <i data-lucide="moon" class="h-6 w-6 block dark:hidden" id="darkIcon"></i>
+    </button>
+
+    <!-- Floating WhatsApp Icon -->
+    <a
+      href="https://wa.me/254705455409"
+      target="_blank"
+      class="fixed bottom-24 right-6 z-50 group"
+    >
+      <span
+        class="absolute -top-2 -right-2 animate-ping inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"
+      ></span>
+      <span
+        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 shadow-lg hover:scale-110 transition-transform duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+          viewBox="0 0 24 24"
+          width="36"
+          height="36"
+        >
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 1.85.504 3.59 1.38 5.11L2 22l4.99-1.36A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.07-6.25c-.22-.11-1.3-.64-1.5-.71-.2-.07-.35-.11-.5.11-.15.22-.57.71-.7.86-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.66-.59-1.1-1.31-1.23-1.53-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.07-.11-.5-1.21-.68-1.66-.18-.44-.36-.38-.5-.39-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.21.22-.8.78-.8 1.9s.82 2.21 1.01 2.37c.19.16 1.61 2.46 3.91 3.35.55.19 1.31.38 1.45.07.44-.05 1.3-.53 1.48-1.04.18-.51.18-.95.13-1.04-.05-.09-.2-.14-.42-.25z"
+          />
+        </svg>
+      </span>
+    </a>
+
+    <!-- Animated Chatbot Widget -->
+    <div id="chatbot" class="fixed bottom-24 left-6 z-50">
+      <button
+        id="chatbotToggle"
+        class="w-16 h-16 rounded-full bg-flame-500 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 animate-bounce"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="white"
+          viewBox="0 0 24 24"
+          width="36"
+          height="36"
+        >
+          <path
+            d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10a9.96 9.96 0 0 0 5.11-1.38L22 22l-1.36-4.99A9.96 9.96 0 0 0 22 12c0-5.523-4.477-10-10-10zm0 18c-1.61 0-3.16-.39-4.53-1.13l-.32-.17-2.96.81.79-3.04-.21-.32A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm-1-7h2v2h-2v-2zm0-8h2v6h-2V5z"
+          />
+        </svg>
+      </button>
+      <div
+        id="chatbotWindow"
+        class="hidden mt-2 w-80 bg-steel-800 border border-flame-500 rounded-xl shadow-2xl overflow-hidden animate__animated animate__fadeInUp"
+      >
+        <div class="bg-flame-500 text-white px-4 py-3 font-bold">
+          Ask Engineer Owino
+        </div>
+        <div
+          id="chatbotMessages"
+          class="p-4 h-64 overflow-y-auto text-sm space-y-2 bg-steel-900"
+        >
+          <div class="flex justify-start">
+            <div
+              class="max-w-[70%] px-4 py-2 rounded-xl bg-steel-800 text-white shadow-lg"
+            >
+              Engineer Owino: Hi there I'm here to answer your questions about
+              welding services, projects, or anything else you'd like to know.
+            </div>
+          </div>
+        </div>
+        <form id="chatbotForm" class="flex border-t border-flame-500">
+          <input
+            type="text"
+            id="chatbotInput"
+            class="flex-1 px-3 py-2 bg-steel-900 text-white focus:outline-none"
+            placeholder="Type your question..."
+            autocomplete="off"
+          />
+          <button type="submit" class="px-4 bg-flame-500 text-white font-bold">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!-- Header / Navbar -->
     <header
       class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-steel-900/60 border-b border-white/5"
@@ -558,50 +643,6 @@
       </div>
     </section>
 
-    <!-- Certifications Carousel -->
-    <!-- <section id="certifications" class="py-20">
-      <div class="mx-auto max-w-4xl px-4">
-        <h2 class="font-display text-3xl font-bold text-center mb-8">
-          Certifications & Awards
-        </h2>
-        <div class="swiper" id="certSwiper">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide flex flex-col items-center justify-center p-8"
-            >
-              <i
-                data-lucide="badge-check"
-                class="h-12 w-12 text-flame-400 mb-4"
-              ></i>
-              <div class="font-bold text-lg">AWS D1.1 Certified Welder</div>
-              <div class="text-white/70">American Welding Society</div>
-            </div>
-            <div
-              class="swiper-slide flex flex-col items-center justify-center p-8"
-            >
-              <i
-                data-lucide="shield-check"
-                class="h-12 w-12 text-green-400 mb-4"
-              ></i>
-              <div class="font-bold text-lg">OSHA Safety Trained</div>
-              <div class="text-white/70">Occupational Safety & Health</div>
-            </div>
-            <div
-              class="swiper-slide flex flex-col items-center justify-center p-8"
-            >
-              <i
-                data-lucide="trophy"
-                class="h-12 w-12 text-yellow-400 mb-4"
-              ></i>
-              <div class="font-bold text-lg">Best Metalwork Project 2023</div>
-              <div class="text-white/70">Industry Award</div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section> -->
-
     <!-- Animated Welding Stats -->
     <section id="stats" class="py-20 bg-steel-900 border-t border-white/5">
       <div class="mx-auto max-w-4xl px-4 text-center">
@@ -729,12 +770,50 @@
           </div>
         </div>
 
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- Each image uses the same placeholder. Replace with actual URLs. -->
+        <!-- Project Categories -->
+        <div class="mt-6 flex flex-wrap gap-3" data-aos="fade-up">
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="px-4 py-2 rounded-xl bg-flame-500 text-white category-filter active"
+            data-category="all"
+          >
+            All Projects
+          </button>
+          <button
+            class="px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 category-filter"
+            data-category="industrial"
+          >
+            Industrial
+          </button>
+          <button
+            class="px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 category-filter"
+            data-category="residential"
+          >
+            Residential
+          </button>
+          <button
+            class="px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 category-filter"
+            data-category="gates"
+          >
+            Gates & Fences
+          </button>
+          <button
+            class="px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5 category-filter"
+            data-category="custom"
+          >
+            Custom Fabrication
+          </button>
+        </div>
+
+        <div
+          class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          id="projects-container"
+        >
+          <!-- Project items with data-category attribute -->
+          <button
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/481048423_1822967638479898_3550325233224279612_n.jpg"
             data-aos="fade-up"
+            data-category="gates"
           >
             <img
               src="images/projects/481048423_1822967638479898_3550325233224279612_n.jpg"
@@ -749,10 +828,11 @@
             >
           </button>
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/481670973_1832621360847859_7216558951906331483_n.jpg"
             data-aos="fade-up"
             data-aos-delay="50"
+            data-category="gates"
           >
             <img
               src="images/projects/481670973_1832621360847859_7216558951906331483_n.jpg"
@@ -767,10 +847,11 @@
             >
           </button>
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/483066067_1832635170846478_8453977032987577015_n.jpg"
             data-aos="fade-up"
             data-aos-delay="100"
+            data-category="industrial"
           >
             <img
               src="images/projects/483066067_1832635170846478_8453977032987577015_n.jpg"
@@ -785,9 +866,10 @@
             >
           </button>
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/486124588_1846145352828793_833158236320688693_n.jpg"
             data-aos="fade-up"
+            data-category="gates"
           >
             <img
               src="images/projects/486124588_1846145352828793_833158236320688693_n.jpg"
@@ -802,10 +884,11 @@
             >
           </button>
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/project1.jpeg"
             data-aos="fade-up"
             data-aos-delay="50"
+            data-category="residential"
           >
             <img
               src="images/projects/project1.jpeg"
@@ -815,13 +898,16 @@
             <span
               class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
             ></span>
-            <span class="absolute bottom-3 left-3 text-sm">Aluminum Bench</span>
+            <span class="absolute bottom-3 left-3 text-sm"
+              >Door Fabrication</span
+            >
           </button>
           <button
-            class="group relative overflow-hidden rounded-2xl border border-white/10"
+            class="group relative overflow-hidden rounded-2xl border border-white/10 project-item"
             data-lightbox="images/projects/project2.jpeg"
             data-aos="fade-up"
             data-aos-delay="100"
+            data-category="custom"
           >
             <img
               src="images/projects/project2.jpeg"
@@ -832,6 +918,16 @@
               class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
             ></span>
             <span class="absolute bottom-3 left-3 text-sm">Shop Fixture</span>
+          </button>
+        </div>
+
+        <!-- View More Button -->
+        <div class="mt-10 text-center" data-aos="fade-up">
+          <button
+            id="viewMoreBtn"
+            class="px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 transition"
+          >
+            View More Projects
           </button>
         </div>
       </div>
@@ -943,26 +1039,41 @@
               Tell me about your job and I’ll get back within 1 business day.
             </p>
 
+            <div
+              class="mt-8 p-6 rounded-2xl border border-flame-500 bg-steel-800/40"
+            >
+              <h3 class="text-xl font-bold text-flame-400 mb-4">
+                Reach out via WhatsApp
+              </h3>
+              <p class="mb-4">
+                For quick responses and immediate quotes, message me directly on
+                WhatsApp:
+              </p>
+              <a
+                href="https://wa.me/254705455409"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-white font-medium transition"
+              >
+                <i data-lucide="message-circle" class="h-5 w-5"></i>
+                Chat on WhatsApp
+              </a>
+            </div>
+
+            <p class="mt-6 text-lg font-medium">Or fill out the form below:</p>
+
             <div class="mt-6 space-y-4 text-sm">
               <p class="flex items-center gap-2">
                 <i data-lucide="phone" class="h-5 w-5"></i>
-                <a href="tel:+254700000000" class="hover:text-flame-300"
-                  >+254 700 000 000</a
-                >
-              </p>
-              <p class="flex items-center gap-2">
-                <i data-lucide="message-circle" class="h-5 w-5"></i>
-                <a
-                  href="https://wa.me/254700000000"
-                  target="_blank"
-                  class="hover:text-flame-300"
-                  >WhatsApp</a
+                <a href="tel:+254705455409" class="hover:text-flame-300"
+                  >+254 705 455 409</a
                 >
               </p>
               <p class="flex items-center gap-2">
                 <i data-lucide="mail" class="h-5 w-5"></i>
-                <a href="mailto:hello@proweld.com" class="hover:text-flame-300"
-                  >hello@proweld.com</a
+                <a
+                  href="mailto:staramisiengineering@gmail.com"
+                  class="hover:text-flame-300"
+                  >staramisiengineering@gmail.com</a
                 >
               </p>
               <p class="flex items-center gap-2">
@@ -1052,26 +1163,126 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 border-t border-white/5">
-      <div
-        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-      >
-        <p class="text-white/60 text-sm">
-          © <span id="year"></span> Engineer Owino Ngode. All rights reserved.
-        </p>
-        <div class="flex items-center gap-4 text-white/70">
-          <a href="#" class="hover:text-flame-300" aria-label="Facebook"
-            ><i data-lucide="facebook" class="h-5 w-5"></i
-          ></a>
-          <a href="#" class="hover:text-flame-300" aria-label="Instagram"
-            ><i data-lucide="instagram" class="h-5 w-5"></i
-          ></a>
-          <a href="#" class="hover:text-flame-300" aria-label="LinkedIn"
-            ><i data-lucide="linkedin" class="h-5 w-5"></i
-          ></a>
-          <a href="#" class="hover:text-flame-300" aria-label="YouTube"
-            ><i data-lucide="youtube" class="h-5 w-5"></i
-          ></a>
+    <footer class="py-16 border-t border-white/5 bg-steel-800/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <a href="#" class="flex items-center gap-2 group mb-6">
+              <div
+                class="h-9 w-9 rounded-xl bg-gradient-to-br from-flame-500 to-orange-600 grid place-items-center shadow-glow"
+              >
+                <i data-lucide="flame" class="h-5 w-5"></i>
+              </div>
+              <span class="font-display text-xl font-bold"
+                >Engineer <span class="text-flame-400">Owino Ngode</span></span
+              >
+            </a>
+            <p class="text-white/70 mb-6">
+              Precision welding and metal fabrication services with over 10
+              years of experience.
+            </p>
+            <div class="flex items-center gap-4 text-white/70">
+              <a
+                href="https://web.facebook.com/joseph.owino.31508"
+                class="hover:text-flame-300"
+                aria-label="Facebook"
+                ><i data-lucide="facebook" class="h-5 w-5"></i
+              ></a>
+              <a href="#" class="hover:text-flame-300" aria-label="Instagram"
+                ><i data-lucide="instagram" class="h-5 w-5"></i
+              ></a>
+              <a href="#" class="hover:text-flame-300" aria-label="LinkedIn"
+                ><i data-lucide="linkedin" class="h-5 w-5"></i
+              ></a>
+              <a href="#" class="hover:text-flame-300" aria-label="YouTube"
+                ><i data-lucide="youtube" class="h-5 w-5"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-display text-lg font-bold mb-6">Services</h3>
+            <ul class="space-y-3 text-white/70">
+              <li>
+                <a href="#services" class="hover:text-flame-300 transition"
+                  >Industrial Welding</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-flame-300 transition"
+                  >Repairs & Maintenance</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-flame-300 transition"
+                  >Custom Fabrication</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-flame-300 transition"
+                  >Mobile / On-Site</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display text-lg font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3 text-white/70">
+              <li>
+                <a href="#about" class="hover:text-flame-300 transition"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="hover:text-flame-300 transition"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#testimonials" class="hover:text-flame-300 transition"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-flame-300 transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display text-lg font-bold mb-6">Contact Info</h3>
+            <ul class="space-y-3 text-white/70">
+              <li class="flex items-center gap-2">
+                <i data-lucide="phone" class="h-5 w-5"></i>
+                <a href="tel:+254705455409">+254 705 455 409</a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="mail" class="h-5 w-5"></i>
+                <a href="mailto:staramisiengineering@gmail.com"
+                  >staramisiengineering@gmail.com</a
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="h-5 w-5"></i>
+                <span>Nairobi, Kenya</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="clock" class="h-5 w-5"></i>
+                <span>Mon-Fri: 8AM - 6PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 pt-8 border-t border-white/5 text-center text-white/60 text-sm"
+        >
+          <p>
+            © <span id="year"></span> Engineer Owino Ngode. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -1082,6 +1293,38 @@
     <script>
       // Init icons
       lucide.createIcons();
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const lightIcon = document.getElementById("lightIcon");
+      const darkIcon = document.getElementById("darkIcon");
+      const body = document.body;
+
+      // Check for saved theme preference or respect OS preference
+      const savedTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+
+      if (savedTheme === "light") {
+        body.classList.add("light-mode");
+        lightIcon.classList.remove("hidden");
+        darkIcon.classList.add("hidden");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        if (body.classList.contains("light-mode")) {
+          localStorage.setItem("theme", "light");
+          lightIcon.classList.remove("hidden");
+          darkIcon.classList.add("hidden");
+        } else {
+          localStorage.setItem("theme", "dark");
+          lightIcon.classList.add("hidden");
+          darkIcon.classList.remove("hidden");
+        }
+      });
 
       // Init AOS
       AOS.init({ duration: 700, once: true, offset: 80, easing: "ease-out" });
@@ -1170,6 +1413,74 @@
 
       // Year
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Project category filtering
+      const categoryFilters = document.querySelectorAll(".category-filter");
+      const projectItems = document.querySelectorAll(".project-item");
+
+      categoryFilters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          // Remove active class from all filters
+          categoryFilters.forEach((f) =>
+            f.classList.remove("active", "bg-flame-500", "text-white")
+          );
+          categoryFilters.forEach((f) =>
+            f.classList.add("border", "border-white/10", "hover:bg-white/5")
+          );
+
+          // Add active class to clicked filter
+          filter.classList.add("active", "bg-flame-500", "text-white");
+          filter.classList.remove(
+            "border",
+            "border-white/10",
+            "hover:bg-white/5"
+          );
+
+          const category = filter.getAttribute("data-category");
+
+          // Show/hide projects based on category
+          projectItems.forEach((item) => {
+            if (
+              category === "all" ||
+              item.getAttribute("data-category") === category
+            ) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // View More functionality
+      const viewMoreBtn = document.getElementById("viewMoreBtn");
+      let visibleProjects = 6; // Initial number of visible projects
+
+      // Initially hide projects beyond the first 6
+      projectItems.forEach((item, index) => {
+        if (index >= visibleProjects) {
+          item.style.display = "none";
+        }
+      });
+
+      viewMoreBtn.addEventListener("click", () => {
+        visibleProjects += 3;
+
+        // Show next set of projects
+        projectItems.forEach((item, index) => {
+          if (index < visibleProjects) {
+            item.style.display = "block";
+            // Re-trigger animation for newly shown items
+            item.setAttribute("data-aos", "fade-up");
+            AOS.refresh();
+          }
+        });
+
+        // Hide button if all projects are visible
+        if (visibleProjects >= projectItems.length) {
+          viewMoreBtn.style.display = "none";
+        }
+      });
     </script>
     <!-- Chatbot & Stats Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
@@ -1212,26 +1523,65 @@
       }
       function getBotReply(msg) {
         msg = msg.toLowerCase();
-        if (msg.includes("price") || msg.includes("cost"))
-          return "Pricing depends on project details. Please share your requirements for a quote.";
-        if (msg.includes("certif"))
-          return "I am AWS D1.1 certified and OSHA safety trained.";
-        if (msg.includes("mobile") || msg.includes("on-site"))
-          return "Yes, I offer mobile/on-site welding services.";
-        if (msg.includes("contact"))
-          return "You can reach me via WhatsApp, phone, or the contact form.";
-        if (msg.includes("timeline") || msg.includes("how long"))
-          return "Project timelines vary. Most jobs are completed within a week.";
-        return "I am here to help! Ask me anything about welding, services, or your project.";
+        if (
+          msg.includes("price") ||
+          msg.includes("cost") ||
+          msg.includes("how much")
+        )
+          return "Pricing depends on project details like materials, complexity, and timeline. For a custom quote, please share your project requirements.";
+        if (msg.includes("certif") || msg.includes("qualified"))
+          return "I am AWS D1.1 certified and OSHA safety trained with over 10 years of experience in industrial and residential welding.";
+        if (
+          msg.includes("mobile") ||
+          msg.includes("on-site") ||
+          msg.includes("travel")
+        )
+          return "Yes, I offer mobile/on-site welding services with all necessary equipment. I serve Nairobi and surrounding areas.";
+        if (
+          msg.includes("contact") ||
+          msg.includes("reach") ||
+          msg.includes("number")
+        )
+          return "You can reach me via WhatsApp at +254705455409, phone call, email at hello@proweld.com, or through the contact form on this website.";
+        if (
+          msg.includes("timeline") ||
+          msg.includes("how long") ||
+          msg.includes("time")
+        )
+          return "Project timelines vary based on complexity. Small repairs: 1-2 days, Custom fabrication: 3-7 days, Large projects: 1-2 weeks. I'll provide a specific timeline after discussing your project.";
+        if (
+          msg.includes("material") ||
+          msg.includes("steel") ||
+          msg.includes("aluminum") ||
+          msg.includes("stainless")
+        )
+          return "I work with various materials including mild steel, stainless steel, aluminum, and other alloys. The best material depends on your project's requirements and budget.";
+        if (
+          msg.includes("service") ||
+          msg.includes("what do you do") ||
+          msg.includes("offer")
+        )
+          return "I offer industrial welding, repairs & maintenance, custom fabrication, and mobile on-site services. This includes gates, railings, structural work, machinery repair, and custom metal pieces.";
+        if (
+          msg.includes("experience") ||
+          msg.includes("how long") ||
+          msg.includes("year")
+        )
+          return "I have over 10 years of professional welding experience across various industries including construction, manufacturing, and residential projects.";
+        if (
+          msg.includes("emergency") ||
+          msg.includes("urgent") ||
+          msg.includes("asap")
+        )
+          return "I offer emergency repair services for critical situations. Please call or WhatsApp me directly at +254705455409 for urgent requests.";
+        if (
+          msg.includes("payment") ||
+          msg.includes("pay") ||
+          msg.includes("deposit")
+        )
+          return "For most projects, I require a 30% deposit with the balance upon completion. I accept mobile money, bank transfer, or cash.";
+        return "I'm here to help with your welding and metal fabrication needs! You can ask me about services, pricing, materials, timelines, or anything else about my work.";
       }
-
-      // Certifications carousel
-      new Swiper("#certSwiper", {
-        slidesPerView: 1,
-        loop: true,
-        autoplay: { delay: 3500 },
-        pagination: { el: "#certSwiper .swiper-pagination", clickable: true },
-      });
 
       // Animated stats
       function animateStat(id, end, duration) {
