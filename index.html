@@ -68,15 +68,6 @@
   <body
     class="bg-steel-900 text-white font-body tracking-tight dark:light-mode"
   >
-    <!-- Theme Toggle Button -->
-    <button
-      id="themeToggle"
-      class="fixed top-24 right-6 z-50 w-12 h-12 rounded-full bg-steel-700 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
-    >
-      <i data-lucide="sun" class="h-6 w-6 hidden dark:block" id="lightIcon"></i>
-      <i data-lucide="moon" class="h-6 w-6 block dark:hidden" id="darkIcon"></i>
-    </button>
-
     <!-- Floating WhatsApp Icon -->
     <a
       href="https://wa.me/254705455409"
@@ -198,6 +189,23 @@
             <a href="#contact" class="hover:text-flame-300 transition"
               >Contact</a
             >
+
+            <!-- Theme Toggle Button -->
+            <button
+              id="themeToggle"
+              class="fixed top-24 right-6 z-50 w-12 h-12 rounded-full bg-steel-700 shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+            >
+              <i
+                data-lucide="sun"
+                class="h-6 w-6 hidden dark:block"
+                id="lightIcon"
+              ></i>
+              <i
+                data-lucide="moon"
+                class="h-6 w-6 block dark:hidden"
+                id="darkIcon"
+              ></i>
+            </button>
           </div>
           <div class="flex items-center gap-3">
             <a
@@ -205,6 +213,7 @@
               class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-flame-500 hover:bg-flame-400 text-sm font-medium shadow-glow transition"
               >Get a Quote</a
             >
+
             <button
               id="menuBtn"
               class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-white/5"
@@ -285,12 +294,15 @@
             </div>
             <div class="mt-8 flex items-center gap-6 text-sm text-white/70">
               <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="h-5 w-5"></i> Certified
-                Welder
+                <i
+                  data-lucide="shield-check"
+                  class="h-5 w-5 text-flame-500"
+                ></i>
+                Certified Welder
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="hammer" class="h-5 w-5"></i> Industrial &
-                Residential
+                <i data-lucide="hammer" class="h-5 w-5 text-flame-500"></i>
+                Industrial & Residential
               </div>
             </div>
           </div>
@@ -309,7 +321,7 @@
                 <div class="text-center p-6">
                   <i
                     data-lucide="sparkles"
-                    class="h-10 w-10 mx-auto opacity-80"
+                    class="h-10 w-10 mx-auto opacity-80 text-flame-500"
                   ></i>
                   <p class="mt-3 text-white/80">
                     TIG • MIG • Stick • Flux‑Core
@@ -364,7 +376,7 @@
           >
             <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
               <div class="flex items-center gap-3">
-                <i data-lucide="id-card" class="h-5 w-5"></i>
+                <i data-lucide="id-card" class="h-5 w-5 text-flame-500"></i>
                 <h3 class="font-semibold">Certifications</h3>
               </div>
               <ul
@@ -376,7 +388,7 @@
             </div>
             <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
               <div class="flex items-center gap-3">
-                <i data-lucide="clock" class="h-5 w-5"></i>
+                <i data-lucide="clock" class="h-5 w-5 text-flame-500"></i>
                 <h3 class="font-semibold">Experience</h3>
               </div>
               <p class="mt-3 text-sm text-white/80">
@@ -386,7 +398,7 @@
             </div>
             <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
               <div class="flex items-center gap-3">
-                <i data-lucide="route" class="h-5 w-5"></i>
+                <i data-lucide="route" class="h-5 w-5 text-flame-500"></i>
                 <h3 class="font-semibold">Capabilities</h3>
               </div>
               <p class="mt-3 text-sm text-white/80">
@@ -396,7 +408,7 @@
             </div>
             <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
               <div class="flex items-center gap-3">
-                <i data-lucide="trophy" class="h-5 w-5"></i>
+                <i data-lucide="trophy" class="h-5 w-5 text-flame-500"></i>
                 <h3 class="font-semibold">Highlights</h3>
               </div>
               <ul class="mt-3 text-sm text-white/80 space-y-1">
@@ -643,7 +655,7 @@
             class="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition"
             data-aos="zoom-in"
           >
-            <i data-lucide="factory" class="h-6 w-6"></i>
+            <i data-lucide="factory" class="h-6 w-6 text-flame-500"></i>
             <h3 class="mt-4 font-semibold">Industrial Welding</h3>
             <p class="mt-2 text-sm text-white/70">
               Structural steel, pipe welds, and plant maintenance.
@@ -654,7 +666,7 @@
             data-aos="zoom-in"
             data-aos-delay="50"
           >
-            <i data-lucide="wrench" class="h-6 w-6"></i>
+            <i data-lucide="wrench" class="h-6 w-6 text-flame-500"></i>
             <h3 class="mt-4 font-semibold">Repairs & Maintenance</h3>
             <p class="mt-2 text-sm text-white/70">
               Gates, grills, trailers, machinery, and more.
@@ -665,7 +677,7 @@
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <i data-lucide="package" class="h-6 w-6"></i>
+            <i data-lucide="package" class="h-6 w-6 text-flame-500"></i>
             <h3 class="mt-4 font-semibold">Custom Fabrication</h3>
             <p class="mt-2 text-sm text-white/70">
               Benches, racks, frames, railings, and bespoke builds.
@@ -676,7 +688,7 @@
             data-aos="zoom-in"
             data-aos-delay="150"
           >
-            <i data-lucide="truck" class="h-6 w-6"></i>
+            <i data-lucide="truck" class="h-6 w-6 text-flame-500"></i>
             <h3 class="mt-4 font-semibold">Mobile / On‑Site</h3>
             <p class="mt-2 text-sm text-white/70">
               Fully equipped for field jobs and quick turnarounds.
@@ -1356,7 +1368,7 @@
             </div>
           </div>
 
-          <div data-aos="fade-left">
+          <div data-aos="fade-left mt-3">
             <form
               id="quoteForm"
               class="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4"
@@ -1543,17 +1555,17 @@
                 </div>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="mail" class="h-5 w-5"></i>
+                <i data-lucide="mail" class="h-5 w-5 text-flame-500"></i>
                 <a href="mailto:staramisiengineering@gmail.com"
                   >staramisiengineering@gmail.com</a
                 >
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="map-pin" class="h-5 w-5"></i>
+                <i data-lucide="map-pin" class="h-5 w-5 text-flame-500"></i>
                 <span>Nairobi, Kenya</span>
               </li>
               <li class="flex items-center gap-2">
-                <i data-lucide="clock" class="h-5 w-5"></i>
+                <i data-lucide="clock" class="h-5 w-5 text-flame-500"></i>
                 <span>Mon-Fri: 8AM - 6PM</span>
               </li>
             </ul>
